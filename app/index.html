@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>投票</title>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+  <link href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css' rel='stylesheet' type='text/css'>
+  <script defer src="https://use.fontawesome.com/releases/v5.0.10/js/all.js" integrity="sha384-slN8GvtUJGnv6ca26v8EzVaR9DC58QEwsIk9q1QXdCU8Yu8ck/tL/5szYlBbqmS+" crossorigin="anonymous"></script>
+</head>
+<body class="row">
+  <div class="banner">
+    <h1 class="text-center">去中心化投票系统</h1>
+    <div class="text-center"><a href="https://www.baidu.com"><i class="fas fa-home fa-2x"></i></a>&nbsp;&nbsp;<a href="#"><i class="fab fa-github fa-2x"></i></a>&nbsp;&nbsp;<a href="#"><i class="fab fa-medium fa-2x"></i></a></div>
+  </div>
+  <div class="container col-margin-top-2">
+    <div id="address"></div>
+    <div class="table-responsive">
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th>数据提供者</th>
+            <th>票数</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Alice</td>
+            <td id="candidate-1"></td>
+          </tr>
+          <tr>
+            <td>Bob</td>
+            <td id="candidate-2"></td>
+          </tr>
+          <tr>
+            <td>Carol</td>
+            <td id="candidate-3"></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <hr>
+    <div class="row">
+      <div>
+        <h2>为你最喜欢的数据提供者投票</h2>
+        <div class="form-inline">
+          <div class="form-group">
+            <label for="candidate">数据提供者：</label>
+            <input type="text" class="form-control" id="candidate" placeholder="Ex: Carol">
+          </div>
+          <button type="submit" class="btn btn-primary" onclick="voteForCandidate()">投票</button>
+        </div>
+        <br>
+        <strong><div id="msg"></div></strong>
+        <br>
+        <div id="vote-for"></div>
+        <div id="addr"></div>
+        <div id="signature"></div>
+        <br>
+      </div>
+      <div>
+        <h2>提交投票到区块链</h2>
+        <div class="form-horizontal">
+          <div class="form-group">
+            <label for="candidate" class="col-sm-2 control-label">数据提供者昵称</label>
+            <div class="col-sm-10">
+              <input class="form-control" id="candidate-name" placeholder="Ex: Carol">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="voter-address" class="col-sm-2 control-label">你的地址</label>
+            <div class="col-sm-10">
+              <input class="form-control" id="voter-address">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="vote-signature" class="col-sm-2 control-label">签名</label>
+            <div class="col-sm-10">
+              <input class="form-control" id="voter-signature">
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+              <button type="submit" onclick="submitVote()" class="btn btn-primary">提交投票</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js"></script>
+<script src="app.js"></script>
+</html>
